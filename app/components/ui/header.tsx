@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { Button } from './button'
 import { CiMenuBurger } from 'react-icons/ci'
 import { MdOutlineShoppingBag } from 'react-icons/md'
-import { CartProvider, useCart } from '../../contexts/cart-context'
+import { useCart } from '../../contexts/cart-context'
 import { CartModal } from '../cart-modal'
 
 

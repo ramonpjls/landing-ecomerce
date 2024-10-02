@@ -1,11 +1,8 @@
 'use client'
 
 import Image from 'next/image'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Grid } from 'swiper/modules'
 import { SwiperNavBtn } from './ui/SwiperNavBtn'
 import { useCart } from '../contexts/cart-context'
-
 
 const products = [
     { id: 1, name: 'Product 1', price: '$19.99', image: '/images/model1.svg', quantity: 1 },
