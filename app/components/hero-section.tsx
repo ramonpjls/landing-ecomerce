@@ -28,15 +28,15 @@ const heroSlides = [
 
 export default function HeroSection() {
     return (
-        <section className="">
+        <div className="flex">
             <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 effect={'cards'}
                 autoplay={{ delay: 5000 }}
-                className=""
+                className="border-2 border-orange-400 "
             >
                 {heroSlides.map((slide) => (
-                    <SwiperSlide key={slide.id} className="bg-[url(/images/hero-bg.svg)]  bg-no-repeat bg-cover ">
+                    <SwiperSlide key={slide.id} className="bg-[url(/images/hero-bg.svg)]  bg-no-repeat bg-cover">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-10 h-100">
                             <div className="flex items-center justify-center lg:hidden">
                                 <Image
@@ -45,15 +45,15 @@ export default function HeroSection() {
                                     className='rounded-3xl md:block '
                                 />
                             </div>
-                            <div className='flex flex-col md:justify-center md:items-start items-center'>
-                                <h1 className="text-4xl md:text-6xl text-[#7AA65A] mb-4 text-center md:text-left">
+                            <div className='flex flex-col md:justify-center md:items-start items-center w-[507px]'>
+                                <h1 className="text-4xl md:text-6xl text-[#7AA65A] mb-4 text-center md:text-left ">
                                     {slide.title}
                                 </h1>
-                                <p className="font-light text-[#7AA65A] mb-6 hidden md:block">
+                                <p className="font-light text-[#7AA65A] mb-6  hidden md:block">
                                     {slide.description}
                                 </p>
-                                <div className=" flex flex-col md:justify-center md:items-start items-center gap-4">
-                                    <div className='flex md:flex-row flex-col gap-4 md:justify-center md:items-start items-center'>
+                                <div className=" flex flex-col border-2 border-yellow-300 md:justify-center md:items-start items-center gap-4">
+                                    <div className='flex border-2 border-red-600 md:flex-row flex-col gap-4 md:justify-center md:items-start items-center'>
                                         <Button variant="default" className="bg-[#7AA65A] w-[226px] h-[56px] sm:h-auto justify-evenly
                                              text-white">
                                             <span>SHOP NOW</span> <FaChevronRight />
@@ -77,6 +77,6 @@ export default function HeroSection() {
                     </SwiperSlide>
                 ))}
             </Swiper>
-        </section>
+        </div>
     )
 }

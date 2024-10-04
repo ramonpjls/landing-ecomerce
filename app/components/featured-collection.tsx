@@ -28,14 +28,14 @@ export default function FeaturedCollection() {
     const { addToCart } = useCart()
 
     const ProductCard = ({ product }: { product: Product }) => (
-        <div className="flex flex-col items-center p-2 bg-white rounded-3xl shadow-xl w-[223px] h-[324px]">
+        <div className="flex flex-col items-center p-4 bg-white rounded-3xl shadow-xl w-[154px] h-fit md:w-[223px] ">
             <Image
                 src={product?.image}
                 alt={product?.name}
                 width={200}
                 height={200}
             />
-            <div className='flex flex-row justify-around my-2 w-full items-center'>
+            <div className='flex md:flex-row flex-col justify-around my-2 w-full items-center'>
                 <span className="text-black text-[16px] ">{product.price}</span>
                 <button onClick={() => addToCart(product)} className="bg-[#7AA65A] text-white px-4 rounded-3xl">
                     BUY NOW
@@ -47,17 +47,17 @@ export default function FeaturedCollection() {
 
     return (
         <div className="py-12 bg-white">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 place-content-center">
+            <div className="place-content-center flex flex-col items-center">
                 <h2 className="text-4xl font-semibold text-[#7AA65A94] mb-8 text-center">Featured Collection</h2>
-                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 place-items-center'>
+                <div className='flex flex-wrap lg:justify-start justify-center md:gap-1 max-w-5xl'>
                     {products.map((product) => (
-                        <div key={product.id}>
+                        <div key={product.id} className="p-2">
                             <ProductCard product={product} />
                         </div>
                     ))}
                 </div>
             </div>
             <SwiperNavBtn />
-        </div>
+        </div >
     )
 }
